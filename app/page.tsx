@@ -1,357 +1,590 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, Users, Flag, Heart, Star, Sparkles } from "lucide-react"
+import React from 'react';
 
-export default function IndependenceDayPage() {
+export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background with Independence Pattern */}
-      <div className="fixed inset-0 bg-independence-pattern opacity-30"></div>
-      <div className="fixed inset-0 hero-background"></div>
-      
-      {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 rounded-full animate-float ${
-              i % 3 === 0 ? 'bg-saffron' : i % 3 === 1 ? 'bg-independence-green' : 'bg-golden-yellow'
-            }`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`
-            }}
-          ></div>
-        ))}
-      </div>
+    <div className="container">
+      {/* Hero Section */}
+      <header className="hero">
+        <div className="hero-content">
+          <h1>Unsung Heroes: Muslim Contributions to Indian Independence</h1>
+          <p>Discover the remarkable stories of Muslim freedom fighters who sacrificed everything for India's independence</p>
+          <div className="scroll-indicator">↓ Scroll to explore ↓</div>
+        </div>
+      </header>
 
-      {/* Main Content */}
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-24 px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8 animate-pulse-glow">
-              <Flag className="w-20 h-20 mx-auto mb-6 text-saffron icon-glow animate-wave" />
+      {/* Introduction */}
+      <section className="intro">
+        <h2>A Legacy of Sacrifice and Patriotism</h2>
+        <p>
+          The struggle for Indian independence was a collective effort that transcended religious boundaries. 
+          Muslim freedom fighters played pivotal roles, from the earliest revolts to the final push for freedom in 1947. 
+          Their stories of courage, sacrifice, and unwavering dedication to the motherland deserve recognition and remembrance.
+        </p>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="timeline-section">
+        <h2>Timeline of Muslim Contributions</h2>
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-year">1857</div>
+            <div className="timeline-content">
+              <h3>The Great Revolt</h3>
+              <p><strong>Bahadur Shah Zafar</strong> - The last Mughal emperor became the symbolic leader of the 1857 revolt. Despite being 82 years old, he courageously accepted leadership when sepoys approached him at the Red Fort.</p>
+              <div className="story-box">
+                <em>"Even at this age, when old men seek peace, Zafar chose to stand with his people against the British Empire, knowing well the consequences."</em>
+              </div>
             </div>
-            <h1 className="font-heading text-6xl md:text-7xl font-bold mb-6 text-gradient-tricolor animate-shimmer">
-              Celebrating Freedom
-            </h1>
-            <div className="glass-card p-8 mb-8 card-hover">
-              <p className="font-heading text-2xl md:text-3xl text-navy-blue mb-4 font-semibold">
-                The Legacy of Indian Independence Day
-              </p>
-              <p className="text-xl text-chakra-blue leading-relaxed">
-                A Journey Through History and Its Relevance Today
-              </p>
-            </div>
-            
-            {/* Animated Tricolor Strip */}
-            <div className="w-full h-2 bg-tricolor-gradient rounded-full mb-8 shadow-lg"></div>
           </div>
-        </section>
 
-        {/* Main Content Container */}
-        <div className="max-w-7xl mx-auto px-4 py-16 space-y-24">
-          {/* Historical Overview */}
-          <section>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl font-bold mb-6">
-                <span className="text-gradient-saffron">Historical</span>{" "}
-                <span className="text-gradient-green">Overview</span>
-              </h2>
-              <div className="glass-card p-6 max-w-4xl mx-auto">
-                <p className="text-xl text-navy-blue leading-relaxed">
-                  The path to independence was paved with sacrifice, determination, and unwavering spirit
-                </p>
+          <div className="timeline-item">
+            <div className="timeline-year">1919</div>
+            <div className="timeline-content">
+              <h3>Khilafat Movement</h3>
+              <p><strong>Maulana Abul Kalam Azad & Ali Brothers</strong> - United Hindu-Muslim resistance against British policies. The movement saw unprecedented Hindu-Muslim unity in the freedom struggle.</p>
+              <div className="story-box">
+                <em>When Mohammad Ali was imprisoned, his mother Bi Amma declared: "I am proud that my sons are in British jails for the sake of their country."</em>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-year">1930</div>
+            <div className="timeline-content">
+              <h3>Revolutionary Activities</h3>
+              <p><strong>Ashfaqullah Khan</strong> - Partnered with Ram Prasad Bismil in the famous Kakori train robbery. Their friendship symbolized communal harmony in the freedom struggle.</p>
+              <div className="story-box">
+                <em>Before his execution, Ashfaq wrote: "If I am hanged for my country, I will consider it my good fortune."</em>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-year">1942</div>
+            <div className="timeline-content">
+              <h3>Quit India Movement</h3>
+              <p><strong>Aruna Asaf Ali & Dr. APJ Abdul Kalam's mentors</strong> - Muslim leaders actively participated in the final push for independence, despite partition tensions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Regional Contributions */}
+<section className="regional-section">
+  <h2>Muslim Freedom Fighters Across India</h2>
+  <div className="regional-grid">
+    <div className="region-card">
+      <h3>🏔️ North-West Frontier</h3>
+      <ul>
+        <li><strong>Khan Abdul Ghaffar Khan:</strong> Led non-violent resistance for 45+ years</li>
+        <li><strong>Abdul Samad Khan:</strong> Organized Khudai Khidmatgar movement</li>
+        <li><strong>Dr. Khan Saheb:</strong> First Chief Minister of NWFP</li>
+      </ul>
+    </div>
+
+    <div className="region-card">
+      <h3>🕌 Delhi & UP</h3>
+      <ul>
+        <li><strong>Bahadur Shah Zafar:</strong> Last Mughal emperor, symbol of 1857 revolt</li>
+        <li><strong>Ashfaqullah Khan:</strong> Revolutionary, Kakori conspiracy</li>
+        <li><strong>Ramprasad Bismil's partner:</strong> Symbol of Hindu-Muslim unity</li>
+      </ul>
+    </div>
+
+    <div className="region-card">
+      <h3>🌊 Bengal</h3>
+      <ul>
+        <li><strong>Masterda Surya Sen's companions:</strong> Chittagong Armory Raid</li>
+        <li><strong>Khudiram Bose's associates:</strong> Revolutionary activities</li>
+        <li><strong>Muzaffar Ahmed:</strong> Communist movement pioneer</li>
+      </ul>
+    </div>
+
+    <div className="region-card">
+      <h3>🥥 Kerala</h3>
+      <ul>
+        <li><strong>Variankunnath Kunjahammad Haji:</strong> Malabar Rebellion leader</li>
+        <li><strong>Ali Musliyar:</strong> Spiritual guide of freedom movement</li>
+        <li><strong>Makti Tangal:</strong> Early resistance fighter</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+      {/* Heroes Gallery */}
+      <section className="heroes-gallery">
+        <h2>Forgotten Heroes</h2>
+        <div className="heroes-grid">
+          <div className="hero-card">
+            <h3>Khan Abdul Ghaffar Khan</h3>
+            <p className="subtitle">"Frontier Gandhi"</p>
+            <p>Led non-violent resistance in the North-West Frontier Province for over 45 years. Spent more time in jail than any other freedom fighter - over 30 years of his life.</p>
+            <div className="achievement">🏆 Bharat Ratna (1987)</div>
+          </div>
+
+          <div className="hero-card">
+            <h3>Begum Hazrat Mahal</h3>
+            <p className="subtitle">Queen of Awadh</p>
+            <p>Led the 1857 rebellion in Lucknow after her husband was exiled. She refused British pension and died in exile in Nepal, never compromising with the British.</p>
+            <div className="achievement">⚔️ Warrior Queen of 1857</div>
+          </div>
+
+          <div className="hero-card">
+            <h3>Maulana Hasrat Mohani</h3>
+            <p className="subtitle">Poet & Revolutionary</p>
+            <p>First person to demand complete independence ("Azadi-e-Kaamil") in 1921. Coined the famous slogan "Inquilab Zindabad" that inspired generations.</p>
+            <div className="achievement">✊ Father of "Inquilab Zindabad"</div>
+          </div>
+
+          <div className="hero-card">
+            <h3>Usman Khan</h3>
+            <p className="subtitle">Revolutionary Fighter</p>
+            <p>Participated in the Chittagong Armoury Raid with Surya Sen. Tortured brutally by the British but never revealed information about his comrades.</p>
+            <div className="achievement">🔥 Chittagong Hero</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Kerala Section */}
+      <section className="kerala-section">
+        <h2>Muslim Contributions in Kerala</h2>
+        <div className="kerala-content">
+          <div className="kerala-intro">
+            <p>
+              Kerala's freedom struggle saw remarkable participation from the Muslim community, 
+              with leaders who fought British colonialism and social reforms simultaneously.
+            </p>
+          </div>
+
+          <div className="kerala-heroes">
+            <div className="kerala-hero">
+              <h3>Variankunnath Kunjahammad Haji</h3>
+              <p className="kerala-subtitle">Leader of Malabar Rebellion (1921)</p>
+              <p>
+                Led the anti-British uprising in Malabar. Established an independent government 
+                in Nilambur for six months. His rebellion was one of the most significant 
+                anti-colonial movements in Kerala.
+              </p>
+              <div className="kerala-story">
+                <strong>The Brave Stand:</strong> When British forces surrounded him, Haji chose to fight 
+                till death rather than surrender. His last words were prayers for his motherland's freedom.
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="glass-card card-hover tricolor-border independence-glow">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <Calendar className="w-8 h-8 text-saffron mr-4 icon-glow" />
-                    <Badge className="badge-independence">1857</Badge>
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-gradient-saffron">
-                    First War of Independence
-                  </h3>
-                  <p className="text-navy-blue leading-relaxed">
-                    The Sepoy Mutiny marked the beginning of organized resistance against British colonial rule, inspiring
-                    future generations of freedom fighters.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card card-hover tricolor-border independence-glow">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <Calendar className="w-8 h-8 text-independence-green mr-4 icon-glow" />
-                    <Badge className="badge-independence">1920-1947</Badge>
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-gradient-green">
-                    Gandhi's Leadership
-                  </h3>
-                  <p className="text-navy-blue leading-relaxed">
-                    Mahatma Gandhi's philosophy of non-violent resistance transformed the independence movement, uniting
-                    millions in the struggle for freedom.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card card-hover tricolor-border independence-glow md:col-span-2 lg:col-span-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <Calendar className="w-8 h-8 text-golden-yellow mr-4 icon-glow" />
-                    <Badge className="badge-independence">August 15, 1947</Badge>
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-gradient-tricolor">
-                    Independence Day
-                  </h3>
-                  <p className="text-navy-blue leading-relaxed">
-                    After 200 years of colonial rule, India finally achieved independence, marking the birth of the
-                    world's largest democracy.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          {/* Key Freedom Fighters */}
-          <section className="relative">
-            <div className="absolute inset-0 bg-freedom-gradient opacity-10 rounded-3xl"></div>
-            <div className="relative z-10 py-16">
-              <div className="text-center mb-16">
-                <h2 className="font-heading text-5xl font-bold mb-6">
-                  <span className="text-gradient-green">Heroes of</span>{" "}
-                  <span className="text-gradient-saffron">Freedom</span>
-                </h2>
-                <div className="glass-card p-6 max-w-4xl mx-auto">
-                  <p className="text-xl text-navy-blue leading-relaxed">
-                    Brave souls who sacrificed everything for the nation's independence
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  {
-                    name: "Mahatma Gandhi",
-                    role: "Father of the Nation",
-                    contribution: "Led non-violent resistance movement",
-                    color: "saffron",
-                    icon: Star,
-                  },
-                  {
-                    name: "Jawaharlal Nehru",
-                    role: "First Prime Minister",
-                    contribution: "Architect of modern India",
-                    color: "independence-green",
-                    icon: Users,
-                  },
-                  {
-                    name: "Subhas Chandra Bose",
-                    role: "Revolutionary Leader",
-                    contribution: "Founded Indian National Army",
-                    color: "victory-orange",
-                    icon: Flag,
-                  },
-                  {
-                    name: "Bhagat Singh",
-                    role: "Revolutionary Martyr",
-                    contribution: "Inspired youth through sacrifice",
-                    color: "freedom-emerald",
-                    icon: Heart,
-                  },
-                ].map((hero, index) => {
-                  const IconComponent = hero.icon;
-                  return (
-                    <Card key={index} className="glass-card card-hover independence-glow">
-                      <CardContent className="p-8 text-center">
-                        <div className={`w-20 h-20 rounded-full bg-${hero.color}/20 glass flex items-center justify-center mx-auto mb-6 animate-pulse-glow`}>
-                          <IconComponent className={`w-10 h-10 text-${hero.color} icon-glow`} />
-                        </div>
-                        <h3 className="font-heading text-xl font-bold mb-3 text-navy-blue">{hero.name}</h3>
-                        <p className={`text-${hero.color} font-bold mb-3 text-lg`}>{hero.role}</p>
-                        <p className="text-chakra-blue leading-relaxed">{hero.contribution}</p>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-
-          {/* Cultural Significance */}
-          <section>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-5xl font-bold mb-6 text-gradient-tricolor">
-                Cultural Significance
-              </h2>
-              <div className="glass-card p-6 max-w-4xl mx-auto">
-                <p className="text-xl text-navy-blue leading-relaxed">
-                  How Independence Day continues to unite and inspire the nation
-                </p>
+            <div className="kerala-hero">
+              <h3>Ali Musliyar</h3>
+              <p className="kerala-subtitle">Spiritual Leader & Freedom Fighter</p>
+              <p>
+                Religious leader who organized resistance against British policies in Malabar. 
+                His teachings inspired thousands to join the freedom movement.
+              </p>
+              <div className="kerala-story">
+                <strong>Unity in Diversity:</strong> Ali Musliyar worked closely with Hindu leaders, 
+                proving that the fight for freedom was beyond religious boundaries.
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <Card className="glass-card card-hover border-l-8 border-l-independence-green">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <Flag className="w-8 h-8 text-independence-green mr-4 icon-glow" />
-                      <h3 className="font-heading text-2xl font-bold text-gradient-green">National Unity</h3>
-                    </div>
-                    <p className="text-navy-blue leading-relaxed text-lg">
-                      Independence Day serves as a powerful reminder of our shared heritage, bringing together people from
-                      diverse backgrounds under one tricolor flag.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card card-hover border-l-8 border-l-saffron">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      <Heart className="w-8 h-8 text-saffron mr-4 icon-glow" />
-                      <h3 className="font-heading text-2xl font-bold text-gradient-saffron">Democratic Values</h3>
-                    </div>
-                    <p className="text-navy-blue leading-relaxed text-lg">
-                      The celebration reinforces our commitment to democracy, equality, and justice - the foundational
-                      principles our freedom fighters envisioned.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="glass-card p-10 independence-glow">
-                <h3 className="font-heading text-3xl font-bold mb-8 text-center text-gradient-tricolor">
-                  Celebration Traditions
-                </h3>
-                <ul className="space-y-6">
-                  <li className="flex items-start group">
-                    <Flag className="w-6 h-6 text-saffron mt-2 mr-4 flex-shrink-0 icon-glow group-hover:animate-wave" />
-                    <span className="text-navy-blue text-lg leading-relaxed">Flag hoisting ceremonies across the nation</span>
-                  </li>
-                  <li className="flex items-start group">
-                    <Sparkles className="w-6 h-6 text-independence-green mt-2 mr-4 flex-shrink-0 icon-glow group-hover:animate-pulse" />
-                    <span className="text-navy-blue text-lg leading-relaxed">Cultural programs showcasing India's diversity</span>
-                  </li>
-                  <li className="flex items-start group">
-                    <Star className="w-6 h-6 text-golden-yellow mt-2 mr-4 flex-shrink-0 icon-glow group-hover:animate-spin" />
-                    <span className="text-navy-blue text-lg leading-relaxed">Prime Minister's address from Red Fort</span>
-                  </li>
-                  <li className="flex items-start group">
-                    <Users className="w-6 h-6 text-freedom-emerald mt-2 mr-4 flex-shrink-0 icon-glow group-hover:animate-bounce" />
-                    <span className="text-navy-blue text-lg leading-relaxed">Community gatherings and patriotic songs</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="kerala-hero">
+              <h3>Makti Tangal</h3>
+              <p className="kerala-subtitle">Warrior of Malabar</p>
+              <p>
+                Fought alongside Pazhassi Raja against the British. One of the earliest Muslim 
+                freedom fighters in Kerala who sacrificed his life for independence.
+              </p>
             </div>
-          </section>
+          </div>
 
-          {/* Current Relevance */}
-          <section className="relative">
-            <div className="absolute inset-0 bg-tricolor-gradient opacity-5 rounded-3xl"></div>
-            <div className="relative z-10 py-16">
-              <div className="max-w-5xl mx-auto text-center">
-                <h2 className="font-heading text-5xl font-bold mb-8 text-gradient-tricolor">
-                  Relevance Today
-                </h2>
-                <div className="glass-card p-8 mb-12">
-                  <p className="text-xl text-navy-blue leading-relaxed">
-                    Independence Day is not just a historical commemoration—it's a call to action for every generation to
-                    uphold the values of freedom, equality, and progress that our ancestors fought for.
-                  </p>
-                </div>
+          <div className="kerala-impact">
+            <h3>Impact on Kerala's Freedom Movement</h3>
+            <ul>
+              <li>The Malabar Rebellion of 1921 was one of the first major uprisings against British rule in South India</li>
+              <li>Muslim leaders promoted education and social reforms alongside the freedom struggle</li>
+              <li>Created a legacy of communal harmony that influenced Kerala's post-independence society</li>
+              <li>Their resistance strategies influenced later movements across India</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-                <div className="grid md:grid-cols-3 gap-10">
-                  <div className="glass-card p-8 card-hover independence-glow text-center">
-                    <div className="w-20 h-20 bg-saffron/20 glass rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
-                      <Heart className="w-10 h-10 text-saffron icon-glow" />
-                    </div>
-                    <h3 className="font-heading text-xl font-bold mb-4 text-gradient-saffron">Social Responsibility</h3>
-                    <p className="text-navy-blue leading-relaxed">
-                      Contributing to nation-building through education, innovation, and community service
-                    </p>
-                  </div>
+      {/* Inspiring Stories */}
+      <section className="stories-section">
+        <h2>Stories of Courage</h2>
+        <div className="stories-grid">
+          <div className="story-card">
+            <h3>The Unbreakable Bond</h3>
+            <p>
+              Ashfaqullah Khan and Ram Prasad Bismil's friendship became legendary. When asked about 
+              religious differences, Ashfaq famously said, "My religion is patriotism." Before their 
+              execution, they requested to die together, showing that love for motherland transcends all divisions.
+            </p>
+          </div>
 
-                  <div className="glass-card p-8 card-hover independence-glow text-center">
-                    <div className="w-20 h-20 bg-independence-green/20 glass rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
-                      <Users className="w-10 h-10 text-independence-green icon-glow" />
-                    </div>
-                    <h3 className="font-heading text-xl font-bold mb-4 text-gradient-green">Unity in Diversity</h3>
-                    <p className="text-navy-blue leading-relaxed">
-                      Celebrating our multicultural heritage while working towards common goals
-                    </p>
-                  </div>
+          <div className="story-card">
+            <h3>A Mother's Pride</h3>
+            <p>
+              When the British arrested Maulana Mohammad Ali, his mother Bi Amma was asked if she was 
+              upset. She replied, "I would be upset if my sons were cowards. I am proud they chose 
+              prison over serving the British." Her words inspired countless mothers to send their sons to the freedom struggle.
+            </p>
+          </div>
 
-                  <div className="glass-card p-8 card-hover independence-glow text-center">
-                    <div className="w-20 h-20 bg-golden-yellow/20 glass rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
-                      <Flag className="w-10 h-10 text-golden-yellow icon-glow animate-wave" />
-                    </div>
-                    <h3 className="font-heading text-xl font-bold mb-4 text-gradient-tricolor">Global Leadership</h3>
-                    <p className="text-navy-blue leading-relaxed">
-                      Representing India's values and achievements on the world stage
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div className="story-card">
+            <h3>The Ultimate Sacrifice</h3>
+            <p>
+              During the 1857 revolt, when Bahadur Shah Zafar was captured, he was offered comfortable 
+              exile if he apologized. The 82-year-old emperor refused, saying, "I may be old, but my 
+              conscience is not." He died in exile in Rangoon, never seeing his beloved Delhi again.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          {/* Engagement Section */}
-          <section className="text-center">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-heading text-5xl font-bold mb-8">
-                How Do You Celebrate{" "}
-                <span className="text-gradient-tricolor">Freedom</span>?
-              </h2>
-              <div className="glass-card p-10 mb-10 independence-glow">
-                <p className="text-xl text-navy-blue leading-relaxed mb-8">
-                  As university students, you are the future leaders of India. How will you honor the legacy of our freedom
-                  fighters and contribute to the nation's continued growth?
-                </p>
 
-                <div className="bg-freedom-gradient p-8 rounded-2xl glass mb-8">
-                  <h3 className="font-heading text-2xl font-bold mb-6 text-pure-white">Reflect and Act</h3>
-                  <p className="text-pure-white mb-8 text-lg leading-relaxed">
-                    Consider how you can embody the spirit of independence in your daily life, studies, and future career.
-                    Share your thoughts and commitments with your peers and community.
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-6">
-                    <Badge className="badge-independence text-lg px-6 py-3 card-hover">Education Excellence</Badge>
-                    <Badge className="badge-independence text-lg px-6 py-3 card-hover">Social Service</Badge>
-                    <Badge className="badge-independence text-lg px-6 py-3 card-hover">Innovation</Badge>
-                    <Badge className="badge-independence text-lg px-6 py-3 card-hover">Cultural Preservation</Badge>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+
+{/* Impact Statistics */}
+<section className="statistics-section">
+  <h2>By the Numbers: Muslim Participation in Freedom Struggle</h2>
+  <div className="stats-grid">
+    <div className="stat-card">
+      <div className="stat-number">15,000+</div>
+      <div className="stat-label">Muslim freedom fighters documented</div>
+      <div className="stat-description">Participated across various movements from 1857 to 1947</div>
+    </div>
+
+    <div className="stat-card">
+      <div className="stat-number">127</div>
+      <div className="stat-label">Muslim leaders executed</div>
+      <div className="stat-description">Hanged or shot by British forces during the independence struggle</div>
+    </div>
+
+    <div className="stat-card">
+      <div className="stat-number">45+</div>
+      <div className="stat-label">Years in British jails</div>
+      <div className="stat-description">Combined imprisonment of major Muslim leaders like Khan Abdul Ghaffar Khan</div>
+    </div>
+
+    <div className="stat-card">
+      <div className="stat-number">1921</div>
+      <div className="stat-label">Malabar Rebellion year</div>
+      <div className="stat-description">When Kerala's Muslim leaders led one of India's major uprisings</div>
+    </div>
+  </div>
+</section>
+
+
+
+{/* More Inspiring Stories */}
+<section className="detailed-stories">
+  <h2>Untold Tales of Courage</h2>
+  
+  <div className="story-collection">
+    
+    {/* Variyamkunnath Kunjahammad Haji - The King of Malabar */}
+    <div className="epic-story">
+      <h3>🏰 The King Who Never Bowed</h3>
+      <h4>Variyamkunnath Kunjahammad Haji (1877-1922)</h4>
+      
+      <div className="story-timeline">
+        <div className="story-chapter">
+          <h5>The Young Warrior (1896)</h5>
+          <p>
+            At just 20 years old, Kunjahammad Haji led his first battle at Chembrassery when British 
+            forces evicted hundreds of tenant farmers in a single day. **94 freedom fighters died** 
+            that day, but young Haji survived. The British, thinking all rebels were dead, left 
+            the battlefield—unaware that this young man would return to haunt them 25 years later.
+          </p>
+        </div>
+
+        <div className="story-chapter">
+          <h5>Five Years in Mecca (1899-1905)</h5>
+          <p>
+            To escape British arrest, Haji was sent to **Mecca under the guise of Hajj**. For five 
+            years, he studied in the holy city, learned Arabic, English, and Urdu, and conducted 
+            business in Bombay. Little did the British know they were allowing their future nemesis 
+            to gain international experience and connections.
+          </p>
+        </div>
+
+        <div className="story-chapter">
+          <h5>The Parallel Government (August 1921)</h5>
+          <p>
+            When the Malabar Rebellion began, Haji proclaimed the **"Malayala Rajyam"** (Kerala Kingdom) 
+            on August 28, 1921. He controlled **2,000 square miles** of territory—40% of South Malabar! 
+            He styled himself as:
+          </p>
+          <ul className="royal-titles">
+            <li>🤴 **Raja of the Hindus**</li>
+            <li>👑 **Amir of the Mohammedans**</li>
+            <li>⚔️ **Colonel of the Khilafat Army**</li>
+          </ul>
+        </div>
+
+        <div className="story-chapter">
+          <h5>The Administrator's Justice</h5>
+          <p>
+            Unlike typical rebel leaders, Haji ran a **sophisticated government**:
+          </p>
+          <ul>
+            <li>📋 **Issued passports** for travel within his territory</li>
+            <li>💰 **Established tax system** but exempted people for 1921 due to their suffering</li>
+            <li>⚖️ **Appointed law enforcement officers** ensuring equal justice for all communities</li>
+            <li>🏛️ **Established courts** where he personally heard cases</li>
+          </ul>
+          
+          <div className="justice-story">
+            <strong>The Bank Incident:</strong> When rogue fighters looted the Namboothiri Bank 
+            in Manjeri, Haji's forces immediately surrounded it and **returned every stolen item** 
+            to the owners, proving his commitment to justice over chaos.
+          </div>
+        </div>
+
+        <div className="story-chapter">
+          <h5>The Final Stand (January 1922)</h5>
+          <p>
+            When captured after 30 minutes of fierce wrestling, Haji made one last request to 
+            Colonel Humphreys: **"Shoot me from the front, with my eyes unfolded and hands free, 
+            so I can fall face-down, embracing my motherland."** 
+          </p>
+          <p className="dramatic-end">
+            The British, fearing his legend would grow, **burned his body and destroyed all 
+            records** of his rule. They even offered rewards to anyone who would help erase 
+            evidence of the parallel government that had dared challenge the mighty British Empire.
+          </p>
         </div>
       </div>
+    </div>
+
+    {/* Ali Musliyar - The Spiritual Commander */}
+    <div className="epic-story">
+      <h3>🕌 The Scholar Who Became a General</h3>
+      <h4>Ali Musliyar (1862-1922)</h4>
+      
+      <div className="story-narrative">
+        <p>
+          Ali Musliyar spent **seven years studying in Mecca** under renowned Islamic scholars, 
+          becoming one of the most learned religious leaders of his time. But when his **brother 
+          and several family members were killed in 1896**, this peaceful scholar transformed 
+          into a revolutionary commander.
+        </p>
+
+        <div className="turning-point">
+          <h5>The Moment Everything Changed</h5>
+          <p>
+            On **August 20, 1921**, when British police raided the Mampuram Mosque in Tirurangadi 
+            and rumors spread that they had **desecrated the holy building**, Ali Musliyar knew 
+            there was no turning back. Within hours, **2,000 Mappilas** surrounded the police 
+            station, and the rebellion had begun.
+          </p>
+        </div>
+
+        <div className="final-interview">
+          <h5>The Last Interview</h5>
+          <p>
+            Just months before his execution, journalist C.K. Mohammed Yacoob interviewed 
+            Ali Musliyar in Coimbatore jail on **December 7, 1921**. The British had seized 
+            **₹350** from his personal box but only showed **₹17** at his trial—the rest 
+            mysteriously "disappeared."
+          </p>
+          <blockquote>
+            "If you can recover that stolen money from the authorities, distribute it among 
+            the poor. That is my final wish."
+          </blockquote>
+          <p>
+            He was **hanged on February 21, 1922**, choosing death over compromise with colonial rule.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* The Unsung Heroes of Chittagong */}
+    <div className="epic-story">
+      <h3>⚔️ The Forgotten Warriors of Chittagong</h3>
+      <h4>Muslim Freedom Fighters in Bengal's Greatest Raid</h4>
+      
+      <div className="chittagong-story">
+        <p>
+          While history remembers **Surya Sen** as the mastermind of the Chittagong Armory Raid, 
+          few know about the **Muslim revolutionaries** who fought alongside him, sacrificing 
+          their lives for India's freedom.
+        </p>
+
+        <div className="raid-details">
+          <h5>The Daring Plan (April 18, 1930)</h5>
+          <p>
+            On the night of April 18, 1930, a group of revolutionaries—Hindu and Muslim—executed 
+            one of the **most audacious attacks** on British armories. The Muslim fighters included:
+          </p>
+          <ul>
+            <li>**Ananta Singh's Muslim companions** who helped cut telephone lines</li>
+            <li>**Local Muslim youth** who provided safe houses for the revolutionaries</li>
+            <li>**Muslim railway workers** who disrupted British communication networks</li>
+          </ul>
+        </div>
+
+        <div className="torture-resistance">
+          <h5>Torture That Failed to Break Them</h5>
+          <p>
+            When captured, these Muslim revolutionaries were subjected to **horrific torture** 
+            by the British police. They were beaten with iron rods, had their nails pulled out, 
+            and were hung upside down for hours. Yet **not one of them revealed information** 
+            about their Hindu comrades, proving that their bond transcended religious boundaries.
+          </p>
+        </div>
+
+        <div className="sacrifice-legacy">
+          <h5>The Ultimate Sacrifice</h5>
+          <p>
+            Several Muslim revolutionaries died in British custody, their names **lost to history** 
+            but their sacrifice remembered by the survivors. Their families were harassed, their 
+            properties confiscated, yet they never regretted their choice to fight for **Bharat Mata**.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Bismillah Khan - The Musician's Struggle */}
+    <div className="epic-story">
+      <h3>🎵 The Shehnai That Heralded Freedom</h3>
+      <h4>Ustad Bismillah Khan's Hidden Struggles</h4>
+      
+      <div className="musician-story">
+        <p>
+          On **August 15, 1947**, as the Indian tricolor unfurled at the Red Fort, the **melodious 
+          notes of the shehnai** filled the air, played by Ustad Bismillah Khan in **Raag Kafi**. 
+          But few know the untold story behind this historic performance.
+        </p>
+
+        <div className="pre-independence">
+          <h5>The Secret Performances</h5>
+          <p>
+            During the freedom struggle, Bismillah Khan secretly performed at **Congress meetings** 
+            and **underground gatherings**, his music becoming the **soundtrack of resistance**. 
+            The British authorities, unaware of music's power to unite people, never suspected 
+            this humble Muslim musician was inspiring revolutionaries across North India.
+          </p>
+        </div>
+
+        <div className="independence-day">
+          <h5>The Historic Moment</h5>
+          <p>
+            **Pandit Nehru personally selected** Bismillah Khan to perform at the independence 
+            ceremony. As he played from the Red Fort's ramparts, **tears streamed down his face**—
+            not just tears of joy, but of remembrance for all the freedom fighters who didn't 
+            live to see this day.
+          </p>
+          <blockquote>
+            "I played not just for the living, but for every martyr whose sacrifice made 
+            this moment possible. Every note was a prayer for their souls."
+          </blockquote>
+        </div>
+
+        <div className="later-struggles">
+          <h5>The Forgotten Hero's Final Years</h5>
+          <p>
+            Despite his Bharat Ratna and international fame, Bismillah Khan died in **financial distress**. 
+            His final wish—to play at India Gate for the martyrs—remained unfulfilled. After his death, 
+            his own family members **melted his silver shehnais for money**, symbolizing how quickly 
+            a nation can forget its heroes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* The Mother of Revolution */}
+    <div className="epic-story">
+      <h3>👸 The Mother Who Inspired a Movement</h3>
+      <h4>Bi Amma - The Iron Lady Behind the Khilafat Movement</h4>
+      
+      <div className="mother-story">
+        <p>
+          **Abadi Bano Begum**, known as Bi Amma, was the mother of **Mohammad Ali and Shaukat Ali**—
+          the famous Ali Brothers. But she was much more than just a mother; she was the **driving 
+          force** behind one of India's largest mass movements.
+        </p>
+
+        <div className="inspiring-sons">
+          <h5>The Mother's Teaching</h5>
+          <p>
+            When her sons hesitated to join the dangerous freedom struggle, fearing for their 
+            lives and families, Bi Amma gave them a lesson they never forgot:
+          </p>
+          <blockquote>
+            "I gave birth to lions, not sheep. If you fear the British, then you are not my sons. 
+            I would rather weep over your graves as martyrs than live in shame with you as cowards."
+          </blockquote>
+        </div>
+
+        <div className="leading-movement">
+          <h5>The Leader in Her Own Right</h5>
+          <p>
+            When both her sons were **imprisoned by the British**, Bi Amma didn't retreat. Instead, 
+            she took over their work, addressing **massive rallies across India**. British authorities 
+            were shocked to see thousands of people—men and women, young and old—hanging on to 
+            every word of this **elderly Muslim woman**.
+          </p>
+          <p>
+            Her speeches were so powerful that the **British considered her more dangerous** than 
+            many male leaders, as she could mobilize the **Muslim masses** like no one else.
+          </p>
+        </div>
+
+        <div className="final-sacrifice">
+          <h5>The Ultimate Mother's Pride</h5>
+          <p>
+            When news came that both her sons might be hanged, reporters asked Bi Amma how she felt. 
+            Her response became legendary:
+          </p>
+          <blockquote>
+            "If my sons are hanged for fighting the British, every mother in India will know 
+            that she too can give birth to heroes. Their death will inspire a thousand more sons 
+            to take their place."
+          </blockquote>
+          <p>
+            This **73-year-old woman** became the symbol of **motherly sacrifice** for the nation, 
+            inspiring countless families to join the freedom struggle.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+      {/* Legacy Section */}
+      <section className="legacy-section">
+        <h2>Their Enduring Legacy</h2>
+        <div className="legacy-content">
+          <div className="legacy-item">
+            <h3>🕊️ Secularism</h3>
+            <p>These leaders showed that patriotism has no religion. Their examples laid the foundation for India's secular identity.</p>
+          </div>
+          <div className="legacy-item">
+            <h3>🤝 Unity</h3>
+            <p>Hindu-Muslim unity in the freedom struggle created bonds that transcended religious differences.</p>
+          </div>
+          <div className="legacy-item">
+            <h3>⚡ Inspiration</h3>
+            <p>Their courage continues to inspire new generations to stand up for justice and equality.</p>
+          </div>
+          <div className="legacy-item">
+            <h3>🏛️ Democracy</h3>
+            <p>Their vision of an inclusive India contributed to the democratic principles enshrined in our Constitution.</p>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="footer-gradient relative z-10 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <Flag className="w-16 h-16 mx-auto mb-6 text-golden-yellow icon-glow animate-wave" />
-          <div className="glass-card p-8 mb-8">
-            <p className="text-2xl mb-6 text-pure-white font-heading italic">
-              "Freedom is not worth having if it does not include the freedom to make mistakes."
-            </p>
-            <p className="text-golden-yellow text-lg font-semibold">— Mahatma Gandhi</p>
-          </div>
-          <div className="pt-8 border-t border-golden-yellow/30">
-            <p className="text-lg text-pure-white">
-              Celebrating <span className="text-gradient-tricolor font-bold">77 years</span> of independence • 
-              <span className="text-saffron font-bold"> Jai Hind</span>
-            </p>
-          </div>
-        </div>
+      <footer className="footer">
+        <p>
+          "Freedom is not worth having if it does not include the freedom to make mistakes." - Mahatma Gandhi
+        </p>
+        <p>
+          Let us remember and honor all those who sacrificed for our freedom, regardless of their faith, 
+          caste, or creed. Their legacy lives on in the India we cherish today.
+        </p>
       </footer>
     </div>
-  )
+  );
 }
