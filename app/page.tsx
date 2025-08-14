@@ -158,6 +158,36 @@ export default function Home() {
           </div>
 
           <div className="kerala-heroes">
+
+            <div className="kerala-hero">
+  <h3>Mamburam Sayyid Alavi Thangal</h3>
+  <p className="kerala-subtitle">Spiritual Leader & Social Reformer</p>
+  <p>
+    Revered Islamic spiritual leader in Malabar, known for guiding and uniting the Muslim community during times of social and political challenges. 
+    His wisdom and leadership left a lasting impact on the culture and history of Kerala.
+  </p>
+  <div className="kerala-story">
+    <strong>Champion of Unity:</strong> Mamburam Sayyid Alavi Thangal fostered harmony among diverse communities, 
+    emphasizing peaceful coexistence and collective progress.
+  </div>
+</div>
+
+
+             <div className="kerala-hero">
+              <h3>Ali Musliyar</h3>
+              <p className="kerala-subtitle">Spiritual Leader & Freedom Fighter</p>
+              <p>
+                Religious leader who organized resistance against British policies in Malabar. 
+                His teachings inspired thousands to join the freedom movement.
+              </p>
+              <div className="kerala-story">
+                <strong>Unity in Diversity:</strong> Ali Musliyar worked closely with Hindu leaders, 
+                proving that the fight for freedom was beyond religious boundaries.
+              </div>
+            </div>
+
+            
+
             <div className="kerala-hero">
               <h3>Variankunnath Kunjahammad Haji</h3>
               <p className="kerala-subtitle">Leader of Malabar Rebellion (1921)</p>
@@ -172,27 +202,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="kerala-hero">
-              <h3>Ali Musliyar</h3>
-              <p className="kerala-subtitle">Spiritual Leader & Freedom Fighter</p>
-              <p>
-                Religious leader who organized resistance against British policies in Malabar. 
-                His teachings inspired thousands to join the freedom movement.
-              </p>
-              <div className="kerala-story">
-                <strong>Unity in Diversity:</strong> Ali Musliyar worked closely with Hindu leaders, 
-                proving that the fight for freedom was beyond religious boundaries.
-              </div>
-            </div>
+           
 
-            <div className="kerala-hero">
-              <h3>Makti Tangal</h3>
-              <p className="kerala-subtitle">Warrior of Malabar</p>
-              <p>
-                Fought alongside Pazhassi Raja against the British. One of the earliest Muslim 
-                freedom fighters in Kerala who sacrificed his life for independence.
-              </p>
-            </div>
           </div>
 
           <div className="kerala-impact">
