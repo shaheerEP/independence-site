@@ -540,7 +540,7 @@ section h2::after {
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(19, 136, 8, 0.2);
   border-radius: 25px;
-  padding: 3rem;
+  padding: 1rem;
   margin: 2rem 0;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
@@ -552,7 +552,7 @@ section h2::after {
   border: 1px solid var(--glass-border);
   border-radius: 15px;
   padding: 2rem;
-  margin-top: 2rem 0;
+  margin: 2rem 0;
   transition: transform 0.3s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
