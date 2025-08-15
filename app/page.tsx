@@ -49,6 +49,24 @@ export default function Home() {
           </div>
 
           <div className="timeline-item">
+  <div className="timeline-year">1921</div>
+  <div className="timeline-content">
+    <h3>Malabar Rebellion</h3>
+    <p>
+      Muslim peasants and leaders, under <strong>Variyamkunnath Kunjahammad Haji</strong>, <strong>Ali Musliyar</strong>, and others, rose against British rule in Malabar. For almost five months, rebels controlled large areas, imposed self-rule, and resisted British military campaigns. Thousands were martyred, and leaders like Haji and Musliyar were executed.
+    </p>
+    <div className="story-box">
+      <em>
+        “With an army of up to 75,000, Kunjahammad Haji set up a parallel government over 5,200 square km. Many local commanders (Ali Musliyar, Chembrasseri Thangal, etc.) directly fought in battles, faced police guns, led sieges, and refused any deal with the British.”[1][13][7][10]
+      </em>
+    </div>
+  </div>
+</div>
+
+         
+
+
+          <div className="timeline-item">
             <div className="timeline-year">1930</div>
             <div className="timeline-content">
               <h3>Revolutionary Activities</h3>
@@ -201,6 +219,89 @@ export default function Home() {
                 till death rather than surrender. His last words were prayers for his motherland's freedom.
               </div>
             </div>
+
+
+
+
+            <div className="kerala-hero">
+  <h3>Chembrasseri Thangal</h3>
+  <p className="kerala-subtitle">Principal Rebel Commander</p>
+  <p>
+    Planned and executed attacks, organized community defense, and led rebel administration during the Malabar Uprising. His direct action and strategic skills made him a key leader.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>E. Moidu Moulavi</h3>
+  <p className="kerala-subtitle">Congress Leader & Freedom Fighter</p>
+  <p>
+    Inspired and organized direct action, led protests, endured years of imprisonment—his activism spanned the Khilafat Movement, Salt Satyagraha, and Quit India. Helped keep the spirit of armed resistance alive through underground writings and rallies.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Konnara Thangal</h3>
+  <p className="kerala-subtitle">Strategist and Field Commander</p>
+  <p>
+    Provided tactical guidance and shelter for freedom fighters, participating in the planning and execution of uprisings against British posts.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Koyappathodi Muhammed Kutty Sahib</h3>
+  <p className="kerala-subtitle">Supporter & Organizer</p>
+  <p>
+    Founder of Darul Uloom Arabic College; provided logistical, material, and moral support, aiding rebel fighters on the ground.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Vadakkeveettil Muhammed</h3>
+  <p className="kerala-subtitle">Commander, Battle of Pookkottur</p>
+  <p>
+    Secretary of the Khilafat Committee, led Mappila forces in the major Battle of Pookkottur (August 1921) against the British. Fought bravely and was martyred, his leadership commemorated in the region to this day.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Kunhi Kadir</h3>
+  <p className="kerala-subtitle">Khilafat Secretary, Tanur</p>
+  <p>
+    Organized resistance cells and took direct part in armed rebellion. Executed for his pivotal role.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Kunji Koya Thangal</h3>
+  <p className="kerala-subtitle">Khilafat Committee President, Malappuram</p>
+  <p>
+    One of the chief organizers of rebellion in Malappuram, directly led fighters in clashes with British forces. Executed after the uprising.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Koya Tangal of Kumaramputhur</h3>
+  <p className="kerala-subtitle">Governor of Khilafat Principality</p>
+  <p>
+    Managed rebel-held territory, organized defense and administration, and was executed after the movement’s suppression.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Chembrasseri Imbichi Koya Thangal</h3>
+  <p className="kerala-subtitle">Guerrilla Commander</p>
+  <p>
+    Led militant operations and showed unwavering bravery in battle. Executed for his actions in rebellion.
+  </p>
+</div>
+
+<div className="kerala-hero">
+  <h3>Palakamthodi Avvocker Musaliar</h3>
+  <p className="kerala-subtitle">Rebel Leader</p>
+  <p>
+    Led local fighters in the Malabar rebellion, sacrificed his life resisting colonial rule.
+  </p>
+</div>
 
            
 
