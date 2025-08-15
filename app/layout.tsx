@@ -1,7 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Work_Sans, Open_Sans } from "next/font/google"
+import { Noto_Kufi_Arabic } from 'next/font/google'
 import "./globals.css"
+
+const kufiFont = Noto_Kufi_Arabic({
+  subsets: ['arabic'],
+  weight: ['400', '700'], // you can add more weights if needed
+  display: 'swap',
+  variable: '--font-arabic'
+})
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -28,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${workSans.variable} ${openSans.variable} antialiased`}>
+    <html lang="ar" dir="rtl" className={kufiFont.variable}>
       <body className="font-sans">{children}</body>
     </html>
   )
