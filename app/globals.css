@@ -821,7 +821,7 @@ blockquote {
     box-shadow: none;
   }
 }
-/* Navbar styles for Next.js 15 - Add to global.css */
+
 
 /* Custom navbar gradient with white glass overlay */
 .navbar-gradient {
@@ -868,6 +868,9 @@ blockquote {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 10;
+  /* Force center positioning */
+  margin: 0 auto;
+  width: fit-content;
 }
 
 /* Logo styling */

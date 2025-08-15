@@ -3,6 +3,7 @@ import React from 'react';
 export default function Home() {
   return (
     <div className="container">
+      
 {/* Hero Section */}
       <header className="hero">
         <div className="hero-content">
