@@ -552,7 +552,6 @@ section h2::after {
   border: 1px solid var(--glass-border);
   border-radius: 15px;
   padding: 2rem;
-  margin: 2rem 0;
   transition: transform 0.3s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
