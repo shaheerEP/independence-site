@@ -118,14 +118,6 @@ export default function Home() {
       </ul>
     </div>
 
-    <div className="region-card">
-      <h3>🥥 Kerala</h3>
-      <ul>
-        <li><strong>Variankunnath Kunjahammad Haji:</strong> Malabar Rebellion leader</li>
-        <li><strong>Ali Musliyar:</strong> Spiritual guide of freedom movement</li>
-        <li><strong>Makti Tangal:</strong> Early resistance fighter</li>
-      </ul>
-    </div>
   </div>
 </section>
 
