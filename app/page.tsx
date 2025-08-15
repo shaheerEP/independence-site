@@ -159,7 +159,7 @@ export default function Home() {
       {/* Kerala Section */}
       <section className="kerala-section">
         <h2>Muslim Contributions in Kerala</h2>
-        <div className="kerala-content">
+        
           <div className="kerala-intro">
             <p>
               Kerala's freedom struggle saw remarkable participation from the Muslim community, 
@@ -297,7 +297,7 @@ export default function Home() {
 
            
 
-          </div>
+          
 
           <div className="kerala-impact">
             <h3>Impact on Kerala's Freedom Movement</h3>
