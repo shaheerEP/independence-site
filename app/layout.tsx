@@ -3,10 +3,11 @@ import type { Metadata } from "next"
 import { Work_Sans, Open_Sans } from "next/font/google"
 import { Noto_Kufi_Arabic } from 'next/font/google'
 import "./globals.css"
+import Navbar from "@/components/Navbar"
 
 const kufiFont = Noto_Kufi_Arabic({
   subsets: ['arabic'],
-  weight: ['400', '700'], // you can add more weights if needed
+  weight: ['400', '700'],
   display: 'swap',
   variable: '--font-arabic'
 })
@@ -37,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={kufiFont.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <Navbar />
+        <main className="pt-16">{children}</main>
+      </body>
     </html>
   )
 }

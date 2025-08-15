@@ -47,6 +47,9 @@ body {
   overflow-x: hidden;
 }
 
+
+
+
 /* Single Complete Indian Flag Background */
 body::before {
   content: '';
@@ -816,5 +819,104 @@ blockquote {
     background: white;
     border: 1px solid #ccc;
     box-shadow: none;
+  }
+}
+/* Navbar styles for Next.js 15 - Add to global.css */
+
+/* Custom navbar gradient with white glass overlay */
+.navbar-gradient {
+  background: linear-gradient(90deg, 
+    #FF9933 0%,     /* Saffron */
+    #FF9933 25%, 
+    #FFFFFF 25%,    /* White */
+    #FFFFFF 75%, 
+    #138808 75%,    /* Green */
+    #138808 100%
+  );
+  /* White glass overlay for better logo visibility */
+  position: relative;
+}
+
+.navbar-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Ensure navbar has proper backdrop */
+.navbar-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Center logos container */
+.navbar-center-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+/* Logo styling */
+.navbar-logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Main center logo specific styling */
+.center-logo {
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-center-logos {
+    gap: 12px;
+    padding: 8px 16px;
+  }
+  
+  .navbar-center-logos img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .center-logo {
+    width: 120px !important;
+    height: 38px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-center-logos {
+    gap: 8px;
+    padding: 6px 12px;
+  }
+  
+  .navbar-center-logos img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .center-logo {
+    width: 100px !important;
+    height: 32px !important;
   }
 }
