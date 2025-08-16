@@ -44,73 +44,143 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  background: var(--animated-gradient);
-  background-size: 400% 400%;
+  /* Combined background with image and gradient overlay */
+  background: 
+    var(--animated-gradient),
+    url('/india.jpg');
+  background-size: 400% 400%, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
   animation: patrioticFlow 15s ease infinite;
   position: relative;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Animated patriotic background */
-@keyframes patrioticFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+
+/* Arabic Header Styles - Add to global.css */
+.welcome-header {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  z-index: 2;
 }
 
-/* Floating particles animation */
-body::before {
+.welcome-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.welcome-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--saffron);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 153, 51, 0.4);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  font-family: var(--font-arabic), 'Amiri', serif;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.welcome-description {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--white);
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.8;
+  font-weight: 500;
+  font-family: var(--font-arabic), 'Amiri', serif;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: right;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Enhance readability with subtle backdrop */
+.welcome-text-backdrop {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 128, 0.2) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Decorative elements */
+.welcome-header::before {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(255, 153, 51, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(19, 136, 8, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(0, 0, 128, 0.08) 0%, transparent 50%);
-  animation: floatParticles 20s ease-in-out infinite;
-  z-index: -1;
-  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--flag-gradient);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(255, 153, 51, 0.5);
 }
 
-@keyframes floatParticles {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.3;
+.welcome-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--saffron) 50%,
+    transparent 100%
+  );
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-header {
+    padding: 3rem 1rem;
   }
-  33% {
-    transform: translateY(-20px) rotate(2deg);
-    opacity: 0.6;
+  
+  .welcome-text-backdrop {
+    padding: 1.5rem;
+    border-radius: 15px;
   }
-  66% {
-    transform: translateY(10px) rotate(-1deg);
-    opacity: 0.4;
+  
+  .welcome-description {
+    text-align: center;
   }
 }
 
-/* Subtle pulse animation for elements with Indian flag colors */
-.patriotic-pulse {
-  animation: patrioticPulse 3s ease-in-out infinite;
-}
-
-@keyframes patrioticPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(255, 153, 51, 0.4);
+@media (max-width: 480px) {
+  .welcome-header {
+    padding: 2rem 1rem;
   }
-  50% {
-    box-shadow: 0 0 0 10px rgba(255, 153, 51, 0);
+  
+  .welcome-text-backdrop {
+    padding: 1rem;
+  }
+  
+  .welcome-title {
+    margin-bottom: 1.5rem;
   }
 }
-
 /* Enhanced glass morphism cards */
 .glass-card {
   background: rgba(255, 255, 255, 0.15);
@@ -696,6 +766,100 @@ section h2:hover::after {
   color: var(--saffron);
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 1rem;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+    margin: 1.5rem 0;
+    align-items: stretch;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .timeline-year {
+    margin-bottom: 1rem;
+    align-self: center;
+    min-width: 80px;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .timeline-content {
+    margin: 0;
+    padding: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .story-box {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  
+  /* Remove hover effects on mobile */
+  .timeline-item:hover {
+    transform: none;
+  }
+  
+  .timeline-year:hover {
+    transform: none;
+  }
+  
+  .timeline-content:hover {
+    transform: none;
+    background: var(--glass-bg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .timeline {
+    padding: 0 0.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
+  
+  .story-box {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+  
+  .timeline-year {
+    min-width: 70px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
 .story-box {
   background: rgba(255, 153, 51, 0.1);
   border-left: 3px solid var(--saffron);

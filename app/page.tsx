@@ -5,6 +5,20 @@ export default function Home() {
     <div className="container content-section">
       
 {/* Hero Section */}
+
+ <header className="welcome-header">
+      <div className="welcome-content">
+        <div className="welcome-text-backdrop">
+          <h1 className="welcome-title">
+            مرحبًا بكم
+          </h1>
+          <p className="welcome-description">
+           في موقعنا ساحة الشيخ أبوبكر، المخصص لتسليط الضوء على مساهمات المسلمين في استقلال الهند
+          </p>
+        </div>
+      </div>
+    </header>
+
       <header className="hero">
         <div className="hero-content">
           <h1>الأبطال المنسيون: مساهمات المسلمين في استقلال الهند</h1>
