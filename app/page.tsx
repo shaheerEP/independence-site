@@ -301,7 +301,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="kerala-impact">
+    <div className="legacy-item">
       <h3>الأثر على حركة حرية كيرالا</h3>
       <ul>
         <li>ثورة مالابار عام 1921 كانت واحدة من أول الانتفاضات الكبرى ضد الحكم البريطاني في جنوب الهند</li>
@@ -383,11 +383,11 @@ export default function Home() {
   <div className="story-collection">
     
     {/* فاريامكونا كونجا حماد حاجي - ملك مالابار */}
-    <div className="epic-story">
+    <div className="text-center">
       <h3>🏰 الملك الذي لم ينحنِ أبداً</h3>
       <h4>فاريامكونا كونجا حماد حاجي (1877-1922)</h4>
       
-      <div className="story-timeline">
+      <div className="text-center">
         <div className="story-chapter">
           <h5>المحارب الصغير (1896)</h5>
           <p>
@@ -458,7 +458,7 @@ export default function Home() {
     </div>
 
     {/* علي مصلي - القائد الروحي */}
-    <div className="epic-story">
+    <div className="text-center">
       <h3>🕌 العالم الذي أصبح جنرالاً</h3>
       <h4>علي مصلي (1862-1922)</h4>
       
@@ -653,7 +653,7 @@ export default function Home() {
 {/* Legacy Section */}
       <section className="legacy-section">
         <h2>إرثهم الدائم</h2>
-        <div className="legacy-content">
+        <div className="text-center">
           <div className="legacy-item">
             <h3>🕊️ العلمانية</h3>
             <p>هؤلاء القادة أظهروا أن حب الوطن ليس له دين. أمثلتهم وضعت أساس هوية الهند العلمانية.</p>
