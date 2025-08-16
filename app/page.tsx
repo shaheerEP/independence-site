@@ -1,103 +1,370 @@
+
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
+  // Animation variants for different sliding effects
+  const slideInLeft = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInRight = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideInUp = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideInDown = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const timelineItemVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: (index) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: index * 0.2,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <div className="container content-section">
       
-{/* Hero Section */}
-
- <header className="welcome-header">
-      <div className="welcome-content">
-        <div className="welcome-text-backdrop">
-          <h1 className="welcome-title">
-            مرحبًا بكم
-          </h1>
-          <p className="welcome-description">
-           في موقعنا ساحة الشيخ أبوبكر، المخصص لتسليط الضوء على مساهمات المسلمين في استقلال الهند
-          </p>
+      {/* Hero Section */}
+      <motion.header 
+        className="welcome-header"
+        initial="hidden"
+        animate="visible"
+        variants={slideInDown}
+      >
+        <div className="welcome-content">
+          <motion.div 
+            className="welcome-text-backdrop"
+            variants={scaleIn}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1 
+              className="welcome-title"
+              variants={slideInUp}
+            >
+              مرحبًا بكم
+            </motion.h1>
+            <motion.p 
+              className="welcome-description"
+              variants={slideInUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3 }}
+            >
+              في موقعنا ساحة الشيخ أبوبكر، المخصص لتسليط الضوء على مساهمات المسلمين في استقلال الهند
+            </motion.p>
+          </motion.div>
         </div>
-      </div>
-    </header>
+      </motion.header>
 
-      <header className="hero">
+      <motion.header 
+        className="hero"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
         <div className="hero-content">
-          <h1>الأبطال المنسيون: مساهمات المسلمين في استقلال الهند</h1>
-          <p>اكتشف القصص الرائعة لمقاتلي الحرية المسلمين الذين ضحوا بكل شيء من أجل استقلال الهند</p>
-          <div className="scroll-indicator">↓ تحرك لأسفل للاستكشاف ↓</div>
+          <motion.h1 variants={slideInLeft}>
+            الأبطال المنسيون: مساهمات المسلمين في استقلال الهند
+          </motion.h1>
+          <motion.p variants={slideInRight}>
+            اكتشف القصص الرائعة لمقاتلي الحرية المسلمين الذين ضحوا بكل شيء من أجل استقلال الهند
+          </motion.p>
+          <motion.div 
+            className="scroll-indicator"
+            variants={slideInUp}
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          >
+            ↓ تحرك لأسفل للاستكشاف ↓
+          </motion.div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Introduction */}
-      <section className="intro">
-        <h2>إرث من التضحية والوطنية</h2>
-        <p>
+      <motion.section 
+        className="intro"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <motion.h2 variants={slideInLeft}>
+          إرث من التضحية والوطنية
+        </motion.h2>
+        <motion.p variants={slideInRight}>
           كان النضال من أجل استقلال الهند جهداً جماعياً تجاوز الحدود الدينية.
           لعب مقاتلو الحرية المسلمون أدواراً مهمة، من الثورات الأولى إلى الدفعة الأخيرة للحرية في عام 1947.
           قصص شجاعتهم وتضحيتهم وإخلاصهم الثابت للوطن تستحق الاعتراف والتذكر.
-        </p>
-      </section>
+        </motion.p>
+      </motion.section>
 
       {/* Timeline Section */}
-      <section className="timeline-section">
-        <h2>الخط الزمني لمساهمات المسلمين</h2>
+      <motion.section 
+        className="timeline-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        <motion.h2 variants={slideInDown}>
+          الخط الزمني لمساهمات المسلمين
+        </motion.h2>
+        
         <div className="timeline">
-          <div className="timeline-item">
-            <div className="timeline-year">1857</div>
-            <div className="timeline-content">
+          <motion.div 
+            className="timeline-item"
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={timelineItemVariants}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.2 } 
+            }}
+          >
+            <motion.div 
+              className="timeline-year"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#007acc"
+              }}
+            >
+              1857
+            </motion.div>
+            <motion.div 
+              className="timeline-content"
+              variants={slideInRight}
+            >
               <h3>الثورة الكبرى</h3>
               <p><strong>بهادر شاه ظفر</strong> - آخر إمبراطور مغولي أصبح الزعيم الرمزي لثورة 1857. رغم أنه كان عمره 82 سنة، قبل القيادة بشجاعة عندما جاءه الجنود في القلعة الحمراء.</p>
-              <div className="story-box">
+              <motion.div 
+                className="story-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
                 <em>"حتى في هذا العمر، عندما يبحث كبار السن عن السلام، اختار ظفر الوقوف مع شعبه ضد الإمبراطورية البريطانية، وهو يعرف العواقب جيداً."</em>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          <div className="timeline-item">
-            <div className="timeline-year">1919</div>
-            <div className="timeline-content">
+          <motion.div 
+            className="timeline-item"
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={timelineItemVariants}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.2 } 
+            }}
+          >
+            <motion.div 
+              className="timeline-year"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#007acc"
+              }}
+            >
+              1919
+            </motion.div>
+            <motion.div 
+              className="timeline-content"
+              variants={slideInRight}
+            >
               <h3>حركة الخلافة</h3>
               <p><strong>مولانا أبو الكلام آزاد والأخوان علي</strong> - وحدوا المقاومة الهندوسية-الإسلامية ضد السياسات البريطانية. شهدت الحركة وحدة هندوسية-إسلامية لم يسبق لها مثيل في نضال الحرية.</p>
-              <div className="story-box">
+              <motion.div 
+                className="story-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
                 <em>عندما سُجن محمد علي، أعلنت والدته بي أما: "أنا فخورة بأن أولادي في السجون البريطانية من أجل بلدهم."</em>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          <div className="timeline-item">
-            <div className="timeline-year">1921</div>
-            <div className="timeline-content">
+          <motion.div 
+            className="timeline-item"
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={timelineItemVariants}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.2 } 
+            }}
+          >
+            <motion.div 
+              className="timeline-year"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#007acc"
+              }}
+            >
+              1921
+            </motion.div>
+            <motion.div 
+              className="timeline-content"
+              variants={slideInRight}
+            >
               <h3>ثورة مالابار</h3>
               <p>
                 الفلاحون والقادة المسلمون، تحت قيادة <strong>فاريامكوناث كونجاهمد حاجي</strong> و<strong>علي مسليار</strong> وآخرين، ثاروا ضد الحكم البريطاني في مالابار. لمدة خمسة أشهر تقريباً، سيطر المتمردون على مناطق كبيرة، وفرضوا الحكم الذاتي، وقاوموا الحملات العسكرية البريطانية. استشهد الآلاف، وأُعدم قادة مثل حاجي ومسليار.
               </p>
-              <div className="story-box">
+              <motion.div 
+                className="story-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
                 <em>
                   "بجيش يصل إلى 75,000 جندي، أقام كونجاهمد حاجي حكومة موازية على مساحة 5,200 كيلومتر مربع. العديد من القادة المحليين (علي مسليار، شمبراسيري ثانغال، إلخ) قاتلوا مباشرة في المعارك، وواجهوا بنادق الشرطة، وقادوا الحصارات، ورفضوا أي صفقة مع البريطانيين."
                 </em>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          <div className="timeline-item">
-            <div className="timeline-year">1930</div>
-            <div className="timeline-content">
+          <motion.div 
+            className="timeline-item"
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={timelineItemVariants}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.2 } 
+            }}
+          >
+            <motion.div 
+              className="timeline-year"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#007acc"
+              }}
+            >
+              1930
+            </motion.div>
+            <motion.div 
+              className="timeline-content"
+              variants={slideInRight}
+            >
               <h3>الأنشطة الثورية</h3>
               <p><strong>أشفق الله خان</strong> - شارك مع رام براسد بسمل في سرقة قطار كاكوري الشهيرة. صداقتهما رمزت للوئام الطائفي في نضال الحرية.</p>
-              <div className="story-box">
+              <motion.div 
+                className="story-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
                 <em>قبل إعدامه، كتب أشفق: "إذا شُنقت من أجل بلدي، فسأعتبر ذلك حظي السعيد."</em>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
-          <div className="timeline-item">
-            <div className="timeline-year">1942</div>
-            <div className="timeline-content">
+          <motion.div 
+            className="timeline-item"
+            custom={4}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={timelineItemVariants}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.2 } 
+            }}
+          >
+            <motion.div 
+              className="timeline-year"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#007acc"
+              }}
+            >
+              1942
+            </motion.div>
+            <motion.div 
+              className="timeline-content"
+              variants={slideInRight}
+            >
               <h3>حركة اتركوا الهند</h3>
               <p><strong>أرونا آصف علي ومعلمو الدكتور عبد الكلام</strong> - شارك القادة المسلمون بنشاط في الدفعة الأخيرة للاستقلال، رغم توترات التقسيم.</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+ 
+
 
 {/* Regional Contributions */}
 <section className="regional-section">
